@@ -1,0 +1,29 @@
+/*Selector de ID*/
+#div-plateado {
+  color: silver;
+  width: 100px;
+  height: 200px;
+  background-color:tomato;
+}
+#btn-pago{
+  color: red;
+  background-color: black;
+  
+}
+/*Selector de clase*/
+.gold {
+  color: gold;
+  width: 100px;
+  height: 200px;
+  background-color: gold;
+}
+/*Selector de etiqueta*/
+p {
+  color: greenyellow;
+  font-family: consolas, monospace;
+  font-weight: bold;
+  font-size: 50px;
+}
+body {
+  background-color: #2e4053;
+}
