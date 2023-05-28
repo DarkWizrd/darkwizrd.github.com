@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      type="description"
+      content="Desarrolle un script embebido que calcule el área y longitud de un círculo considerando los valores de radio y pi (3.141592) como datos de entrada. Utilice el objeto Math para realizar su cálculo (Math.PI)."
+    />
+    <title>Calculo de A y L de la circunferencia</title>
+  </head>
+  <body>
+    <script type="text/JavaScript">
+      let radio;
+      //solicitud del radio de la circunferencia, el valor de PI es constante por lo que no se le solicitara al usuario, se realiza un casteo a float para evitar posibles errores por los tipos de dato, ademas de contemplar medidas que no necesariamente sean enteras
+      radio=prompt("Introduzca el radio de la circunferencia")
+      
+      //Calculo de el area y la longitud de la circunferencia utilizando las formulas dadas
+      alert("El area de la circunferencia es: "+(Math.PI*(Math.pow(radio,2))))
+      alert("La longitud de la circunferencia es: "+(2*Math.PI*radio))
+    </script>
+  </body>
+</html>

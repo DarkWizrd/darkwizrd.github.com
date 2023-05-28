@@ -3,12 +3,11 @@
   color: silver;
   width: 100px;
   height: 200px;
-  background-color:tomato;
+  background-color: tomato;
 }
-#btn-pago{
+#btn-pago {
   color: red;
   background-color: black;
-  
 }
 /*Selector de clase*/
 .gold {
