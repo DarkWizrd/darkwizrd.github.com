@@ -42,17 +42,40 @@ function pares(num) {
 }
 //problema 4
 function piramide(bloques) {
-  let altura = 0, base = 0, material;
+  let altura = 0,
+    base = 0,
+    material;
   material = bloques;
-  while(material >= (base + 1)) {
+  while (material >= base + 1) {
     altura += 1;
     base += 1;
     material -= base;
   }
   if (material === 0) {
-    return ("La altura de la pirámide es de " + altura + " bloques de altura\nNo sobran bloques");
+    return (
+      "La altura de la pirámide es de " +
+      altura +
+      " bloques de altura\nNo sobran bloques"
+    );
   } else {
-    return("La altura de la pirámide es de " + altura + " bloques de altura\nCon "+material+" bloques sobrantes");
+    return (
+      "La altura de la pirámide es de " +
+      altura +
+      " bloques de altura\nCon " +
+      material +
+      " bloques sobrantes"
+    );
   }
+}
 
+let LibroJS = {
+  nombre: "Mastering JavaScript",
+  autor: "M. White",
+  precio: 25.0,
+  pdf: false,
+};
+function leer(titulo) {
+  if (titulo == LibroJS.nombre) {
+    return "Ya he leído este libro";
+  }else{return "Libro no encontrado."}
 }
