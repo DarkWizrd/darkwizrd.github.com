@@ -29,7 +29,7 @@ function imc(peso, altura) {
       "Felicidades, estas en tu rango de peso normal\nTu indice de masa corporal es: " +
       imc;
   }
-  mensaje += "\nRecuera alimentarte bien y hacer ejercicio regularmente.";
+  mensaje += "\nRecuerda alimentarte bien y hacer ejercicio regularmente.";
   return mensaje;
 }
 //Problema 3
@@ -40,7 +40,7 @@ function pares(num) {
     return "El numero es impar.";
   }
 }
-//problema 4
+//problema 5
 function piramide(bloques) {
   let altura = 0,
     base = 0,
@@ -67,7 +67,7 @@ function piramide(bloques) {
     );
   }
 }
-
+//problema 8
 let LibroJS = {
   nombre: "Mastering JavaScript",
   autor: "M. White",
@@ -77,5 +77,32 @@ let LibroJS = {
 function leer(titulo) {
   if (titulo == LibroJS.nombre) {
     return "Ya he leído este libro";
-  }else{return "Libro no encontrado."}
+  } else {
+    return "Libro no encontrado.";
+  }
+}
+//problema 4
+function calificar(nota) {
+  let answers = ["a", "b", "a", "b", "c"],
+    puntos = 0,
+    mensaje;
+  for (let i = 0; i < answers.length; i++) {
+    alert(
+      "Pregunta 1:\nTu respuesta: " +
+        nota[i] +
+        "\nRespuesta correcta: " +
+        answers[i]
+    );
+    if (answers[i] === nota[i]) {
+      puntos += 1;
+    }
+  }
+  if (puntos == 5) {
+    mensaje = "Felicidades, Tu nota es A";
+  } else if (puntos == 4) {
+    mensaje = "Su nota es C";
+  } else {
+    mensaje = "Deberá repetir la prueba";
+  }
+  return mensaje;
 }

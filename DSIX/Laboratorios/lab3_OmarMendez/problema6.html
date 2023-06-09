@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Búsqueda de números</title>
+    <script src="./main.js"></script>
+  </head>
+  <body style="background-color: grey">
+    <script type="text/javascript">
+      //num almacenara los números ingresados por el usuario mientras que pos almacenara las posiciones donde se encuentren esos números
+      var num = [],
+        pos = [],
+        buscado,
+        i,c=0,
+        mensaje,
+        encontrado = false;
+      for (i = 0; i < 5; i++) {
+        num.push(parseFloat(prompt("Digite un numero")));
+      }
+      buscado = parseFloat(prompt("Digite el numero que desea buscar:"));
+      for (i = 0; i < num.length; i++) {
+        if (num[i] === buscado) {
+          pos[c] = i;
+          c++;
+        }
+      }
+      mensaje = buscado + " fue encontrado en la posición: ";
+      for (i = 0; i<pos.length; i++) {
+        mensaje += pos[i] + ", ";
+        encontrado = true;
+      }
+      mensaje += "del arreglo";
+      if (encontrado) {
+        alert(mensaje);
+      }else{alert("El numero no fue encontrado en el arreglo")}
+    </script>
+  </body>
+</html>
+<!--
+Genere un script que permita leer una serie de 5 números enteros y los almacene en un
+arreglo. Una vez estén almacenados los números en el arreglo, solicite al usuario que
+digite un número X. El programa deberá indicar por pantalla todos los índices de las
+posiciones del arreglo donde está X almacenado. Por ejemplo, en el siguiente arreglo, X =
+7, la respuesta sería: Índices 1 y 3. -->
