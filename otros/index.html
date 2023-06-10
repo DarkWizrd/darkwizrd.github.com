@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Calculadora de horas trabajadas</title>
+    <script>
+      function calcularHorasTrabajadas() {
+        var horaInicio = document.getElementById("hora-inicio").value;
+        var horaFin = document.getElementById("hora-fin").value;
+        var horaInicioDespuesAlmuerzo = document.getElementById(
+          "hora-inicio-despues-almuerzo"
+        ).value;
+        var horaFinDespuesAlmuerzo = document.getElementById(
+          "hora-fin-despues-almuerzo"
+        ).value;
+
+        var [inicioHoras, inicioMinutos] = obtenerHorasMinutos(horaInicio);
+        var [finHoras, finMinutos] = obtenerHorasMinutos(horaFin);
+        var [inicioDespuesAlmuerzoHoras, inicioDespuesAlmuerzoMinutos] =
+          obtenerHorasMinutos(horaInicioDespuesAlmuerzo);
+        var [finDespuesAlmuerzoHoras, finDespuesAlmuerzoMinutos] =
+          obtenerHorasMinutos(horaFinDespuesAlmuerzo);
+
+        // Convertir las horas a formato de 24 horas
+        inicioHoras = convertirAMPMa24Horas(inicioHoras);
+        finHoras = convertirAMPMa24Horas(finHoras);
+        inicioDespuesAlmuerzoHoras = convertirAMPMa24Horas(
+          inicioDespuesAlmuerzoHoras
+        );
+        finDespuesAlmuerzoHoras = convertirAMPMa24Horas(
+          finDespuesAlmuerzoHoras
+        );
+
+        var inicioTotalMinutos = inicioHoras * 60 + inicioMinutos;
+        var finTotalMinutos = finHoras * 60 + finMinutos;
+        var inicioDespuesAlmuerzoTotalMinutos =
+          inicioDespuesAlmuerzoHoras * 60 + inicioDespuesAlmuerzoMinutos;
+        var finDespuesAlmuerzoTotalMinutos =
+          finDespuesAlmuerzoHoras * 60 + finDespuesAlmuerzoMinutos;
+
+        var horasTrabajadasAntesAlmuerzo = Math.floor(
+          (finTotalMinutos - inicioTotalMinutos) / 60
+        );
+        var minutosTrabajadosAntesAlmuerzo =
+          (finTotalMinutos - inicioTotalMinutos) % 60;
+
+        var horasTrabajadasDespuesAlmuerzo = Math.floor(
+          (finDespuesAlmuerzoTotalMinutos - inicioDespuesAlmuerzoTotalMinutos) /
+            60
+        );
+        var minutosTrabajadosDespuesAlmuerzo =
+          (finDespuesAlmuerzoTotalMinutos - inicioDespuesAlmuerzoTotalMinutos) %
+          60;
+
+        var horasTrabajadasTotales =
+          horasTrabajadasAntesAlmuerzo + horasTrabajadasDespuesAlmuerzo;
+        var minutosTrabajadosTotales =
+          minutosTrabajadosAntesAlmuerzo + minutosTrabajadosDespuesAlmuerzo;
+
+        // Verificar si hay horas extras
+        if (horasTrabajadasTotales > 8) {
+          var horasExtras = horasTrabajadasTotales - 8;
+          horasTrabajadasTotales = 8;
+        } else {
+          var horasExtras = 0;
+        }
+
+        // Formatear los resultados
+        var horasTrabajadasFormateadas = horasTrabajadasTotales
+          .toString()
+          .padStart(2, "0");
+        var minutosTrabajadosFormateados = minutosTrabajadosTotales
+          .toString()
+          .padStart(2, "0");
+        var horasExtrasFormateadas = horasExtras.toString().padStart(2, "0");
+
+        document.getElementById("resultado").textContent =
+          "Horas trabajadas: " +
+          horasTrabajadasFormateadas +
+          ":" +
+          minutosTrabajadosFormateados;
+        document.getElementById("horas-extras").textContent =
+          "Horas extras: " + horasExtrasFormateadas;
+      }
+
+      function obtenerHorasMinutos(hora) {
+        var [horaStr, minutosStr] = hora.split(":");
+        var horas = parseInt(horaStr, 10);
+        var minutos = parseInt(minutosStr, 10);
+        return [horas, minutos];
+      }
+
+      function convertirAMPMa24Horas(horas) {
+        if (horas === 12) {
+          horas = 0;
+        }
+        return horas;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Calculadora de horas trabajadas</h1>
+
+    <label for="hora-inicio">Hora de inicio:</label>
+    <input type="text" id="hora-inicio" placeholder="HH:MM" />
+
+    <label for="hora-fin">Hora de salida al almuerzo:</label>
+    <input type="text" id="hora-fin" placeholder="HH:MM" />
+
+    <label for="hora-inicio-despues-almuerzo"
+      >Hora de inicio después del almuerzo:</label
+    >
+    <input type="text" id="hora-inicio-despues-almuerzo" placeholder="HH:MM" />
+
+    <label for="hora-fin-despues-almuerzo"
+      >Hora de salida:</label
+    >
+    <input type="text" id="hora-fin-despues-almuerzo" placeholder="HH:MM" />
+
+    <button onclick="calcularHorasTrabajadas()">Calcular</button>
+
+    <div id="resultado"></div>
+    <div id="horas-extras"></div>
+  </body>
+</html>
