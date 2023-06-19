@@ -1,0 +1,12 @@
+{
+  "nombre": "Omar",
+  "apellido": "Mendez",
+  "edad": 27,
+  "direccion": {
+    "pais": "Panama",
+    "ciudad": "David",
+    "lugar": "Urb. Lassonde"
+  },
+  "fecha_nac": "09/02/96"
+}
+

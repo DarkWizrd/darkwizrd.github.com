@@ -9,35 +9,49 @@
   </head>
   <body style="background-color: grey">
     <script type="text/javascript">
-      //num almacenara los números ingresados por el usuario mientras que pos almacenara las posiciones donde se encuentren esos números
+      // Arreglos para almacenar números y posiciones
       var num = [],
         pos = [],
         buscado,
-        i,c=0,
+        i,
+        c = 0,
         mensaje,
         encontrado = false;
+
+      // Obtener 5 números ingresados por el usuario
       for (i = 0; i < 5; i++) {
-        num.push(parseFloat(prompt("Digite un numero")));
+        num.push(parseFloat(prompt("Digite un número")));
       }
-      buscado = parseFloat(prompt("Digite el numero que desea buscar:"));
+
+      // Obtener el número que se desea buscar
+      buscado = parseFloat(prompt("Digite el número que desea buscar:"));
+
+      // Buscar el número en el arreglo
       for (i = 0; i < num.length; i++) {
         if (num[i] === buscado) {
           pos[c] = i;
           c++;
         }
       }
+
+      // Crear el mensaje con las posiciones encontradas
       mensaje = buscado + " fue encontrado en la posición: ";
-      for (i = 0; i<pos.length; i++) {
+      for (i = 0; i < pos.length; i++) {
         mensaje += pos[i] + ", ";
         encontrado = true;
       }
       mensaje += "del arreglo";
+
+      // Mostrar mensaje de alerta con el resultado
       if (encontrado) {
         alert(mensaje);
-      }else{alert("El numero no fue encontrado en el arreglo")}
+      } else {
+        alert("El número no fue encontrado en el arreglo");
+      }
     </script>
   </body>
 </html>
+
 <!--
 Genere un script que permita leer una serie de 5 números enteros y los almacene en un
 arreglo. Una vez estén almacenados los números en el arreglo, solicite al usuario que
