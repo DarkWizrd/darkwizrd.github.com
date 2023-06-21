@@ -34,15 +34,15 @@ function renameFilesAndFoldersRecursively(folderPath, stringToRemove) {
 }
 
 // Ruta de la carpeta
-const folderPath = '/ruta/a/la/carpeta';
+const folderPath = 'C:/Users/maste/Music';
 
 // Cadena de caracteres a eliminar (definida por el usuario)
-const stringToRemove = 'cadena-por-eliminar';
+const stringToRemove = '[SPOTIFY-DOWNLOADER.COM] ';
 
 // Llama a la función para renombrar archivos y carpetas de forma recursiva
 renameFilesAndFoldersRecursively(folderPath, stringToRemove);
 
-//para usar el programa, ejecuta un cmd en la ubicación de este archivo y luego ejecuta el comando node nombre-de-este-archivo.js
+//para usar el programa, ejecuta un cmd en la ubicación de este archivo y luego ejecuta el comando node renombrar.js
 
 
 
