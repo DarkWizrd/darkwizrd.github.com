@@ -1,0 +1,32 @@
+{
+  "nombre": "Omar",
+  "apellido": "Mendez",
+  "edad": 25,
+  "experiencia": [//agreglo de objetos
+    {
+      "empresa": "Microsoft",
+      "tiempo": 5
+    },
+    {
+      "empresa": "Google",
+      "tiempo": 2
+    }
+  ],
+  "direccion": {//JSON con propiedades mixtas
+    "calle": "Urb. Lassonde",
+    "numero": 20,
+    "ciudad": "david",
+    "matricula_fecha": [
+      {
+        "id": 0,
+        "fecha": "abril 2022"
+      },
+      {
+        "id": 1,
+        "fecha": "junio 2023"
+      }
+    ]
+  },"pagar":"true"
+}
+//este es un comentario de una linea para JSON5
+/*ESTE ES UN COMENTARIO DE MULTIPLES LINEAS EN JSON5*/

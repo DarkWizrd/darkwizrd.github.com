@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScriptObjectNotation</title>
+  </head>
+  <body style="background-color: black">
+    <script>
+      var objeto = {
+        nombre: "Omar",
+        apellido: "Mendez",
+        edad: 25,
+        experiencia: [
+          //agreglo de objetos
+          {
+            empresa: "Microsoft",
+            tiempo: 5,
+          },
+          {
+            empresa: "Google",
+            tiempo: 2,
+          },
+        ],
+        direccion: {
+          //JSON con datos multiples
+          calle: "Urb. Lassonde",
+          numero: 20,
+          ciudad: "david",
+          matricula_fecha: [
+            {
+              id: 0,
+              fecha: "abril 2022",
+            },
+            {
+              id: 1,
+              fecha: "junio 2023",
+            },
+          ],
+        },
+      };
+      //JSON.stringify convierte un objeto JS en un elemento JSON
+
+      //console.log(JSON.stringify(objeto.nombre));
+      //console.log(JSON.stringify(objeto.edad));
+      //console.log(JSON.stringify(objeto.experiencia[0].empresa))
+      //console.log(JSON.stringify(objeto.direccion.matricula_fecha[1].fecha))
+
+      //console.log(JSON.stringify(objeto)); //convierte todo el objeto en JSON
+      //user = JSON.parse();//convierte el JSON en un objeto manipulable de JS
+      //console.log(user);
+
+      //const porcion = JSON.stringify(objeto, ["nombre", "apellido"], 2);
+      //console.log(porcion);
+
+
+      /*observaciones
+      Si bien la documentación no oficial de JS (mozila.org) nos dice que JSON no admite datos tipo DATE, pero el contenido retornado por este método si es manipulable por JSON.*/
+
+      //var fecha=new Date();
+      //console.log(JSON.stringify(fecha))
+
+      //JSON de manera nativa no admite comentarios, por eso se creo la version no-oficial "JSON5"
+    </script>
+  </body>
+</html>

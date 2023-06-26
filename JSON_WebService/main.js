@@ -1,32 +1,13 @@
-const user = {
-  nombre: "Omar",
-  apellido: "Mendez",
-  edad: 27,
-  direccion: {
-    pais: "Panama",
-    ciudad: "David",
-    lugar: "Urb. Lassonde",
-  },
-  fecha_nac: "09/02/96",
-  mensaje() {
-    return "Goodbye, Mr. Anderson.";
-  },
-};
-
-// console.log(user);
-// console.log(user.mensaje());
-// console.log(JSON.stringify(user));
-
-const friends = [
-  { name: "Martin", nick: "boslik" },
-  { name: "Gabriel", nick: "MrZurdo" },
-  { name: "Benjamin", nick: "Leshuga" },
-  { name: "Juan", nick: "juanjo" },
-];
-
-console.log(JSON.stringify(friends))
-
-
-//agrega el array a 
-user.friends = friends
-console.log(JSON.stringify(user));
+async function obtenerDatos() {
+  const response = await fetch("http://127.0.0.1:5500/JSON_WebService/datos.json");
+  const json = await response.text();
+  //console.log(json);
+  //console.log(JSON.parse(json));
+  //const data = JSON.parse(json);
+  //editar un json localmente
+  //data.nombre="Clesy";
+  //data.apellido="Jaramillo"
+  //console.log(data.nombre + " " + data.apellido);
+  //document.getElementById("mostrarDatos").textContent ="Esto es un dato retornado de JSON "+data.nombre" "+data.apellido;
+}
+obtenerDatos();

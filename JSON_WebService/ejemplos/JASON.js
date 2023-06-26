@@ -1,0 +1,31 @@
+var user = {
+  nombre: "Omar",
+  apellido: "Mendez",
+  edad: 25,
+  experiencia: [//agreglo de objetos
+    {
+      empresa: "Microsoft",
+      tiempo: 5,
+    },
+    {
+      empresa: "Google",
+      tiempo: 2,
+    },
+  ],
+  direccion: {//JSON con datos multiples
+    calle: "Urb. Lassonde",
+    numero: 20,
+    ciudad: "david",
+    matricula_fecha: [
+      {
+        id: 0,
+        fecha: "abril 2022",
+      },
+      {
+        id: 1,
+        fecha: "junio 2023",
+      },
+    ],
+  },
+  pagar(){return true}
+};
