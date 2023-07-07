@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="Datos y signos del paciente" name="description" />
+    <meta type="description" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diálisis Peritoneal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" href="./assets/pictures/serpiente.png" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="./assets/JS/main.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <header>
+          <h1>REPORTE DE BALANCE HÍDRICO - DIÁLISIS PERITONEAL</h1>
+        </header>
+        <main>
+          <div id="form1">
+            <form class="form">
+              <label for="nombre_paciente">Paciente:</label>
+              <input
+                type="text"
+                id="nombre_paciente"
+                placeholder="Nombre"
+                required
+              />
+              <br />
+              <label for="fecha_tratamiento">Fecha:</label>
+              <input
+                type="date"
+                id="fecha_tratamiento"
+                placeholder="Fecha"
+                required
+              />
+              <br />
+              <label for="tipo_sistemapdp">Sistema:</label>
+              <input
+                type="text"
+                id="tipo_sistemapdp"
+                placeholder="Sistema"
+                required
+              />
+              <br />
+              <label for="ultima_presion">Presión Arterial:</label>
+              <input
+                type="text"
+                id="ultima_presion"
+                placeholder="Presion"
+                required
+              />
+              <br />
+              <label for="valor_frecuencia">Pulso:</label>
+              <input
+                type="text"
+                id="valor_frecuencia"
+                placeholder="Valor"
+                required
+              />
+              <br />
+              <button id="evaluar">Evaluar</button>
+            </form>
+          </div>
+
+          <div id="form2">
+            <form>
+              <table>
+                <caption>
+                  Este es el formulario de registro de los datos del sistema de
+                  diálisis peritoneal, por favor ingrese datos claros y precisos.
+                  Revíselos antes de enviar.
+                </caption>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th colspan="2">
+                    <label id="texto_fase1" rowspan="2">FASE 1</label>
+                  </th>
+                  <th colspan="2">
+                    <label id="texto_fase2" rowspan="2">FASE 2</label>
+                  </th>
+                </tr>
+                <tr>
+                  <!-- Títulos de las filas -->
+                  <th>Recambio</th>
+                  <th><label for="concentracion">Concentración</label></th>
+                  <th><label for="infusion">Infusión</label></th>
+                  <th><label for="drenaje">Drenaje</label></th>
+                  <th><label for="cualidad">Cualidad</label></th>
+                  <th><label for="balance">Balance</label></th>
+                </tr>
+                <tr>
+                  <!-- FILA 1 -->
+                  <th><label class="row">1</label></th>
+                  <td class="concentracion">
+                    <select id="concentracion1">
+                      <option value="1.5">1.5%</option>
+                      <option value="2.5%">2.5%</option>
+                      <option value="7.5%">7.5%</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input
+                      id="infusion1"
+                      class="infusion"
+                      type="text"
+                      value="2000"
+                      readonly
+                    />
+                  </td>
+                  <td><input type="text" id="drenaje1" class="drenaje" /></td>
+                  <td class="cualidad">
+                    <select id="cualidad1">
+                      <option value="claro">Claro (Normal)</option>
+                      <option value="turbio">Turbio (Irregular)</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" id="balance1" placeholder="Total" />
+                  </td>
+                </tr>
+                <tr>
+                  <!-- FILA 2 -->
+                  <th><label class="row">2</label></th>
+                  <td class="concentracion">
+                    <select id="concentracion2">
+                      <option value="1.5">1.5%</option>
+                      <option value="2.5%">2.5%</option>
+                      <option value="7.5%">7.5%</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input
+                      id="infusion2"
+                      class="infusion"
+                      type="text"
+                      value="2000"
+                      readonly
+                    />
+                  </td>
+                  <td><input type="text" id="drenaje2" class="drenaje" /></td>
+                  <td class="cualidad">
+                    <select id="cualidad2">
+                      <option value="claro">Claro (Normal)</option>
+                      <option value="turbio">Turbio (Irregular)</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" id="balance2" placeholder="Total" />
+                  </td>
+                </tr>
+                <tr>
+                  <!-- FILA 3 -->
+                  <th><label class="row">3</label></th>
+                  <td class="concentracion">
+                    <select id="concentracion3">
+                      <option value="1.5">1.5%</option>
+                      <option value="2.5%">2.5%</option>
+                      <option value="7.5%">7.5%</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input
+                      id="infusion3"
+                      class="infusion"
+                      type="text"
+                      value="2000"
+                      readonly
+                    />
+                  </td>
+                  <td><input type="text" id="drenaje3" class="drenaje" /></td>
+                  <td class="cualidad">
+                    <select id="cualidad3">
+                      <option value="claro">Claro (Normal)</option>
+                      <option value="turbio">Turbio (Irregular)</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" id="balance3" placeholder="Total" />
+                  </td>
+                </tr>
+                <tr>
+                  <!-- FILA 4 -->
+                  <th><label class="row">4</label></th>
+                  <td class="concentracion">
+                    <select id="concentracion4">
+                      <option value="1.5">1.5%</option>
+                      <option value="2.5%">2.5%</option>
+                      <option value="7.5%">7.5%</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input
+                      id="infusion4"
+                      class="infusion"
+                      type="text"
+                      value="2000"
+                      readonly
+                    />
+                  </td>
+                  <td><input type="text" id="drenaje4" class="drenaje" /></td>
+                  <td class="cualidad">
+                    <select id="cualidad4">
+                      <option value="claro">Claro (Normal)</option>
+                      <option value="turbio">Turbio (Irregular)</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" id="balance4" placeholder="Total" />
+                  </td>
+                </tr>
+                <tr>
+                  <!-- TOTALES -->
+                  <th><label class="row">TOTALES</label></th>
+                  <td>
+                    <input
+                      type="text"
+                      id="total_concentracion"
+                      placeholder="ConcentracionFinal"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="total_infusion"
+                      placeholder="InfusionFinal"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="total_drenaje"
+                      placeholder="DrenajeFinal"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="total_cualidad"
+                      placeholder="CualidadFinal"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      id="total_balance"
+                      placeholder="Balance Final"
+                    />
+                  </td>
+                </tr>
+                <!-- Repite los <tr> y <td> para las demás filas -->
+              </table>
+            </form>
+          </div>
+        </main>
+        <div class="time">
+          <p id="fecha">Aqui va la fecha</p>
+          <p id="hora">Aqui va la hora</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

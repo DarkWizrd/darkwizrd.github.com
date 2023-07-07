@@ -46,4 +46,14 @@ renameFilesAndFoldersRecursively(folderPath, stringToRemove);
 
 
 
+/* $(document).ready(function(){
 
+
+
+
+
+
+
+
+  
+}) //se asegura que el arbol cargue completo antes de ejecutar el resto del codigo*/
