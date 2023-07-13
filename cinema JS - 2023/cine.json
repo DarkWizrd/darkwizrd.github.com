@@ -1,0 +1,47 @@
+[
+  {
+    "nombre": "The Little Mermaid",
+    "tanda": "4:30p.m - 6:00p.m",
+    "anio": 2023,
+    "direccion": "Rob Marshall",
+    "sala": "sala vip",
+    "reservado": ["A5", "B2", "B3", "B4", "C1"],
+    "imagen": "img/mermaid.jpg"
+  },
+  {
+    "nombre": "The Flash",
+    "tanda": "10:30PM - 1:00PM",
+    "anio": 2023,
+    "direccion": "Andy Muschietti",
+    "sala": "sala vip",
+    "reservado": ["A5", "C2", "C5"],
+    "imagen": "img/flash.jpg"
+  },
+  {
+    "nombre": "Elementos",
+    "tanda": "2:30pm-4:00pm",
+    "anio": 2023,
+    "direccion": "Peter Sohn",
+    "sala": "sala vip",
+    "reservado": [],
+    "imagen": ""
+  },
+  {
+    "nombre": "Krakens y Sirenas",
+    "tanda": "9:00PM-11:10PM",
+    "anio": 2023,
+    "direccion": "Kirk DeMicco",
+    "sala": "sala vip",
+    "reservado": ["A4", "B1", "B2", "C2"],
+    "imagen": ""
+  },
+  {
+    "nombre": "Indiana Jones Dial Destino",
+    "tanda": "6:30p.m-8:30pm",
+    "anio": 2023,
+    "direccion": "James Mangold",
+    "sala": "sala vip",
+    "reservado": ["A1", "B1", "B2", "C2"],
+    "imagen": "img/JONES.JPG"
+  }
+]
