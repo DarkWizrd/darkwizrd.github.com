@@ -1,0 +1,113 @@
+a {
+  color: white;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #2e4053;
+}
+
+header {
+  background-color: green;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+}
+
+h1 {
+  display: inline-block;
+  width: 400px;
+  color: black;
+  color: orangered;
+}
+
+h3 {
+  display: inline-block;
+  width: 400px;
+  color: yellow;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.info-principal {
+  background-color: rebeccapurple;
+  text-align: center;
+  font-weight: bolder;
+  color: yellowgreen;
+  padding: 4px;
+}
+
+.container {
+  width: 900px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.educacion {
+  display: inline-block;
+  width: 69%;
+  vertical-align: top;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.curso,
+.carrera {
+  font-style: italic;
+}
+
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+dt {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+dd {
+  margin: 0;
+}
+
+.foto-perfil {
+  display: inline-block;
+  width: 30%;
+  margin-top: 25px;
+}
+
+img {
+  width: 100%;
+  border-style: ridge;
+  border-color: chartreuse;
+}
+
+.experiencia-laboral {
+  margin-top: 100px;
+}
+
+.oficial-transmision,
+.oficial-bioseguridad,
+.vocal-mesa,
+.empadronador {
+  font-style: oblique;
+}
+
+.otra-informacion {
+  margin-top: 70px;
+}
+
+.redes-sociales {
+  margin-top: 70px;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: bolder;
+}

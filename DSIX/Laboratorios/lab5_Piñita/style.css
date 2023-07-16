@@ -1,0 +1,35 @@
+body {
+  background-color: gray; /* Establece el color de fondo del cuerpo del documento como gris */
+  color: white; /* Establece el color de texto como blanco */
+}
+
+.container {
+  display: flex; /* Establece el contenedor como un flex container */
+  align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
+  justify-content: center; /* Centra horizontalmente los elementos dentro del contenedor */
+}
+
+button {
+  border-radius: 5px; /* Establece el radio de las esquinas del botón como 5px */
+  background-color: #00bcd4; /* Establece el color de fondo del botón */
+  color: white; /* Establece el color de texto del botón como blanco */
+  padding: 10px 20px; /* Establece el relleno interno del botón */
+  font-size: 16px; /* Establece el tamaño de fuente del botón como 16px */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+h1 {
+  display: grid; /* Establece el elemento h1 como un grid container */
+  place-items: center; /* Centra el contenido del h1 tanto vertical como horizontalmente */
+}
+#mostrar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bolder;
+  font-size:larger
+  
+}

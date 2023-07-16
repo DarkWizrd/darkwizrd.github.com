@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: gray;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #00bcd4;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+#horas-trabajadas,
+#horas-extras {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.resultado {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.resultado-label {
+  margin-bottom: 5px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Formulario</h2>
+    <form id="myForm">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" />
+      <br /><br />
+      <input type="submit" value="Enviar" />
+    </form>
+    <script>
+      $(document).ready(function () {
+        $("#myForm").submit(function (event) {
+          event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+          // Obtener el valor del campo de nombre
+          var nombre = $("#nombre").val();
+          // Enviar los datos mediante AJAX utilizando el método POST
+          $.post("resultado.html", { nombre: nombre })
+            .done(function (data) {
+              // Redirigir a la página de resultado
+              window.location.href = "resultado.html";
+            })
+            .fail(function () {
+              // Manejar el error en caso de fallo en la solicitud
+              alert("Error en la solicitud.");
+            });
+        });
+      });
+    </script>
+  </body>
+</html>

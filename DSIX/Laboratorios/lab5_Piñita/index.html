@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Importación de la hoja de estilos local -->
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <!-- Importación de la hoja de estilos de normalización -->
+    <script src="./main.js"></script>
+    <!-- Importación del archivo JavaScript -->
+
+    <title>Finca La Piñita</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Div contenedor -->
+      <div class="content">
+        <!-- Div del contenido -->
+        <header>
+          <h1>Recolección semanal de piña</h1>
+          <!-- Encabezado principal -->
+        </header>
+        <form>
+          <dl>
+            <!-- Empleado 1 -->
+            <dd>
+              <!-- Entradas para las piñas del empleado 1 -->
+              <input
+                type="text"
+                class="empleado1"
+                placeholder="Piñas empleado 1"
+                oninput="validarNumeros(this)"
+              />
+              <!-- El atributo oninput llama a la función validarNumeros() cuando se introduce un valor, esta función valida que solo se introduzcan números en la caja de texto -->
+              <input
+                class="empleado1"
+                placeholder="Piñas empleado 1"
+                oninput="validarNumeros(this)"
+              />
+              <input
+                class="empleado1"
+                placeholder="Piñas empleado 1"
+                oninput="validarNumeros(this)"
+              />
+              <input
+                class="empleado1"
+                placeholder="Piñas empleado 1"
+                oninput="validarNumeros(this)"
+              />
+              <input
+                class="empleado1"
+                placeholder="Piñas empleado 1"
+                oninput="validarNumeros(this)"
+              />
+            </dd>
+          </dl>
+          <dl>
+            <!-- Empleado 2 -->
+            <dd>
+              <!-- Entradas para las piñas del empleado 2 -->
+              <input
+                class="empleado2"
+                placeholder="Piñas empleado 2"
+                oninput="validarNumeros(this)"
+              />
+              <input
+                class="empleado2"
+                placeholder="Piñas empleado 2"
+                oninput="validarNumeros(this)"
+              />
+              <input
+                class="empleado2"
+                placeholder="Piñas empleado 2"
+                oninput="validarNumeros(this)"
+              />
+              <input
+                class="empleado2"
+                placeholder="Piñas empleado 2"
+                oninput="validarNumeros(this)"
+              />
+              <input
+                class="empleado2"
+                placeholder="Piñas empleado 2"
+                oninput="validarNumeros(this)"
+              />
+            </dd>
+          </dl>
+          <dl>
+            <!-- Empleado 3-->
+            <dd>
+              <!-- Entradas para las piñas del empleado 3 -->
+              <input
+                class="empleado3"
+                placeholder="Piñas empleado 3"
+                oninput="validarNumeros(this)"
+              />
+              <input
+                class="empleado3"
+                placeholder="Piñas empleado 3"
+                oninput="validarNumeros(this)"
+              />
+              <input
+                class="empleado3"
+                placeholder="Piñas empleado 3"
+                oninput="validarNumeros(this)"
+              />
+              <input
+                class="empleado3"
+                placeholder="Piñas empleado 3"
+                oninput="validarNumeros(this)"
+              />
+              <input
+                class="empleado3"
+                placeholder="Piñas empleado 3"
+                oninput="validarNumeros(this)"
+              />
+            </dd>
+          </dl>
+        </form>
+        <button id="calcular" onclick="calculo()">
+          Calcular
+        </button><!-- Botón de cálculo -->
+        <!-- Salida de los datos -->
+        <div id="mostrar">
+          <p id="total1" class="total"></p>
+          <!-- Párrafo para mostrar el total de piñas recolectadas por el empleado 1 -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

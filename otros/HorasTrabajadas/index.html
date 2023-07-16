@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculadora de horas trabajadas</title>
+
+    <script>
+      function calcularHorasTrabajadas(
+        horaInicio1,
+        horaFin1,
+        horaInicio2,
+        horaFin2
+      ) {
+        var [inicioHoras1, inicioMinutos1] = horaInicio1.split(":").map(Number);
+        var [finHoras1, finMinutos1] = horaFin1.split(":").map(Number);
+        var [inicioHoras2, inicioMinutos2] = horaInicio2.split(":").map(Number);
+        var [finHoras2, finMinutos2] = horaFin2.split(":").map(Number);
+
+        if (finHoras1 < inicioHoras1) {
+          finHoras1 += 12;
+        }
+
+        if (finHoras2 < inicioHoras2) {
+          finHoras2 += 12;
+        }
+
+        var inicioTotalMinutos1 = inicioHoras1 * 60 + inicioMinutos1;
+        var finTotalMinutos1 = finHoras1 * 60 + finMinutos1;
+        var inicioTotalMinutos2 = inicioHoras2 * 60 + inicioMinutos2;
+        var finTotalMinutos2 = finHoras2 * 60 + finMinutos2;
+
+        var diferenciaMinutos1 = finTotalMinutos1 - inicioTotalMinutos1;
+        var diferenciaMinutos2 = finTotalMinutos2 - inicioTotalMinutos2;
+
+        var horasTrabajadas1 = Math.floor(diferenciaMinutos1 / 60);
+        var minutosTrabajados1 = diferenciaMinutos1 % 60;
+        var horasTrabajadas2 = Math.floor(diferenciaMinutos2 / 60);
+        var minutosTrabajados2 = diferenciaMinutos2 % 60;
+
+        var totalHorasTrabajadas = horasTrabajadas1 + horasTrabajadas2;
+        var totalMinutosTrabajados = minutosTrabajados1 + minutosTrabajados2;
+
+        // Ajustar si los minutos suman más de 60
+        if (totalMinutosTrabajados >= 60) {
+          totalHorasTrabajadas += Math.floor(totalMinutosTrabajados / 60);
+          totalMinutosTrabajados = totalMinutosTrabajados % 60;
+        }
+
+        var horasExtras = 0;
+        var minutosExtras = 0;
+
+        if (totalHorasTrabajadas > 8) {
+          horasExtras = totalHorasTrabajadas - 8;
+          minutosExtras = totalMinutosTrabajados;
+          totalHorasTrabajadas = 8;
+          totalMinutosTrabajados = 0;
+        }
+
+        return {
+          horasTrabajadas:
+            totalHorasTrabajadas.toString().padStart(2, "0") +
+            ":" +
+            totalMinutosTrabajados.toString().padStart(2, "0"),
+          horasExtras:
+            horasExtras.toString().padStart(2, "0") +
+            ":" +
+            minutosExtras.toString().padStart(2, "0"),
+        };
+      }
+
+      function calcularHoras() {
+        var horaInicio1 = document.getElementById("hora-inicio-1").value;
+        var horaFin1 = document.getElementById("hora-fin-1").value;
+        var horaInicio2 = document.getElementById("hora-inicio-2").value;
+        var horaFin2 = document.getElementById("hora-fin-2").value;
+
+        var horas = calcularHorasTrabajadas(
+          horaInicio1,
+          horaFin1,
+          horaInicio2,
+          horaFin2
+        );
+
+        document.getElementById("horas-trabajadas").textContent =
+          "Horas trabajadas: " + horas.horasTrabajadas;
+
+        document.getElementById("horas-extras").textContent =
+          "Horas extras: " + horas.horasExtras;
+      }
+      function vaciarCampos() {
+        document.getElementById("hora-inicio-1").value = "";
+        document.getElementById("hora-fin-1").value = "";
+        document.getElementById("hora-inicio-2").value = "";
+        document.getElementById("hora-fin-2").value = "";
+
+        document.getElementById("horas-trabajadas").textContent = "";
+        document.getElementById("horas-extras").textContent = "";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Calculadora de horas trabajadas</h1>
+
+    <label for="hora-inicio-1">Hora de entrada:</label>
+    <input type="text" id="hora-inicio-1" placeholder="HH:MM" />
+
+    <label for="hora-fin-1">Hora de salida a almorzar:</label>
+    <input type="text" id="hora-fin-1" placeholder="HH:MM" />
+    <br />
+
+    <label for="hora-inicio-2">Hora de entrada de almorzar:</label>
+    <input type="text" id="hora-inicio-2" placeholder="HH:MM" />
+
+    <label for="hora-fin-2">Hora de salida:</label>
+    <input type="text" id="hora-fin-2" placeholder="HH:MM" />
+    <br />
+    <br />
+    <button onclick="calcularHoras()">Calcular</button>
+    <button onclick="vaciarCampos()">Borrar</button>
+
+    <div id="horas-trabajadas"></div>
+    <div id="horas-extras"></div>
+  </body>
+</html>

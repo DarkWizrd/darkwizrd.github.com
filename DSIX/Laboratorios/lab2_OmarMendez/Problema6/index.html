@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      type="description"
+      content="Desarrolle un script que solicite al usuario ingresar números hasta que se presione Cancelar. Al presionar Cancelar, se deberá conocer la sumatoria de todos los números ingresados."
+    />
+    <title>Suma de números</title>
+  </head>
+  <body style="background-color: black">
+    <script type="text/JavaScript">
+      var num=0,suma=0;
+
+      for(var i=0;i<999;i--){
+      num=prompt("Digite un numero");
+      if(num==null){
+        break
+      }
+      suma+=parseFloat(num);}
+      alert("La suma de los números es: "+suma)
+    </script>
+  </body>
+</html>

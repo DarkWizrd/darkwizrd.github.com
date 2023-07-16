@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Resultado</h2>
+    <p>¡Hola, <span id="nombre"></span>!</p>
+
+    <script>
+        const getURLParameter = (name) => {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
+        };
+
+        $(document).ready(() => {
+            const nombre = getURLParameter('nombre');
+            $('#nombre').text(nombre);
+        });
+    </script>
+</body>
+</html>

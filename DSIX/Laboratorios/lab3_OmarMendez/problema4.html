@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen</title>
+    <script src="./main.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      let respuestas = [];
+      alert("Bienvenido a tu examen de geografía")
+      respuestas.push(
+        prompt(
+          "Cual es la capital de Francia?\n(a) Paris\n(b) Londres\n(c) Madrid"
+        ).toLowerCase()
+      );
+      respuestas.push(
+        prompt(
+          "Cual es el rio mas largo del mundo?\n(a) Nilo\n(b) Amazonas\n(c) Yangtze"
+        ).toLowerCase()
+      );
+      respuestas.push(
+        prompt(
+          "HG es el símbolo químico de que elemento?\n(a) Mercurio\n(b) Hidrógeno\n(c) Helio"
+        ).toLowerCase()
+      );
+      respuestas.push(
+        prompt(
+          "¿Cuál es el planeta más grande del sistema solar?\n(a) Saturno\n(b) Júpiter\n(c) Neptuno"
+        ).toLowerCase()
+      );
+      respuestas.push(
+        prompt(
+          "¿Cuál es el autor de la obra 'Don Quijote de la Mancha'?\n(a) William Shakespeare\n(b) Gabriel García Márquez\n(c) Miguel de Cervantes"
+        ).toLowerCase()
+      );
+      alert(calificar(respuestas));
+    </script>
+  </body>
+</html>
+<!-- Escriba un algoritmo que permita ingresar las respuestas dadas por un estudiante en un
+examen de selección múltiple. Considere lo siguiente:
+• El script deberá solicitar únicamente las repuestas dadas por el estudiante en el
+examen de 5 preguntas. Sólo tiene tres opciones posible de respuesta; a, b, c.
+• Clave de respuestas correctas: P1 = a, P2 = b, P3 = a, P4 = b, P5 = c
+• Si el estudiante tiene 5 aciertos, su nota es “A”
+• Si el estudiante tiene 4 aciertos, su nota es “C”.
+• Por debajo de 4 aciertos, mostrar un mensaje que diga: “Deberá repetir la prueba”.
+• Utilice arreglos para almacenar las respuestas dadas por el estudiante. -->
