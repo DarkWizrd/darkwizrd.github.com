@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Sinopsis Cinematográfica</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/cinep02.js"></script>
+  </head>
+
+  <body>
+    <div id="imagen1" class="text-center">
+      <img src="img/cinemalogo.gif" height="120px" width="868px" />
+      <h2 class="text-center">Sinopsis Cinematográfica</h2>
+    </div>
+    <div class="selector">
+      <fieldset>
+        <legend>Selección de Películas</legend>
+        <label
+          >The Little Mermaid
+          <input id="sirena" type="checkbox" tabindex="2"/></label>
+        <label
+          >The Flash <input id="flash" type="checkbox" tabindex="3"
+        /></label>
+        <label
+          >Indiana Jones 5 <input id="indiana" type="checkbox" tabindex="4"
+        /></label>
+        <input
+          id="btn1"
+          type="button"
+          class="btn btn-primary btn-lg"
+          value="Mostrar"
+        />
+      </fieldset>
+      <p id="descripcion1"></p>
+      <p id="descripcion2"></p>
+      <p id="descripcion3"></p>
+      <img id="poster">
+    </div>
+  </body>
+</html>

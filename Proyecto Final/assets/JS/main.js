@@ -52,106 +52,21 @@ $(document).ready(function () {
   });
   $("#btn3").click(function (event) {
     event.preventDefault();
-    $("#form1").fadeOut('fast');
-    $("#form2").fadeOut('fast');
+    $("#form1").fadeOut("fast");
+    $("#form2").fadeOut("fast");
     grafico();
   });
   $("#regresar").click(function (event) {
     event.preventDefault();
-    $("#form1").fadeIn('fast');
-    $("#form2").fadeIn('fast');
-    $("#btn1").fadeIn('fast');
-    $("#btn3").fadeInt('fast');
-    $("#regresar").fadeOut('fast');
-    $("canvas").fadeOut('fast');
+    $("#form1").fadeIn("fast");
+    $("#form2").fadeIn("fast");
+    $("#btn1").fadeIn("fast");
+    $("#btn3").fadeInt("fast");
+    $("#regresar").fadeOut("fast");
+    $("canvas").fadeOut("fast");
   });
 
   //Funciones y el resto del codigo
-
-  function analisis() {
-    sistema = $("#tipo_sistemadp").val();
-    presionAr = $("#ultima_presion").val();
-    pulso = $("#valor_frecuencia").val();
-    if (presionAr !== "") {
-      presion_Arterial(presionAr);
-    }
-
-    if (pulso !== "") {
-      frecuencia_cardiaca(pulso);
-    }
-
-    num1 = parseInt(cambio[i][1].value);
-    num2 = parseInt(cambio[i][2].value);
-    $("#balance" + (i + 1)).val(num1 - num2);
-    $("#nombre_paciente").attr("readonly", "readonly");
-    $("#drenaje" + (i + 1)).attr("readonly", "readonly");
-    $("#concentracion" + (i + 1)).attr("disabled", "disabled");
-    $("#cualidad" + (i + 1)).attr("disabled", "disabled");
-    i++; //Marca la fase de el analisis
-    if ($("#balance4").val() !== "") {
-      nombre = $("#nombre_paciente").val();
-      fecha_tratamiento = $("#fecha_tratamiento").val();
-      drenaje = document.getElementsByClassName("drenaje");
-      balance = document.getElementsByClassName("balance");
-      infusion = document.getElementsByClassName("infusion");
-      concentracion = document.getElementsByClassName("concentracion");
-      cualidad = document.getElementsByClassName("cualidad");
-
-      for (i = 0; i < balance.length; i++) {
-        totaldrenaje += parseInt(drenaje[i].value);
-        totalinfusion += parseInt(infusion[i].value);
-        totalconcentracion += parseFloat(concentracion[i].value);
-        totalcualidad += parseFloat(cualidad[i].value, 10);
-        totalbalance += parseFloat(balance[i].value);
-      }
-      cualidad_contenido(totalcualidad);
-
-      // Evalúa la cualidad del contenido de la diálisis, cualidad normal=1,cualidad turbia=2, si totalcualidad>5 indica que el contenido fue turbio en mas de una ocasión.
-
-      $("#total_concentracion").val(totalconcentracion.toString() + "%");
-      $("#total_drenaje").val(totaldrenaje.toString() + "mL");
-      $("#total_infusion").val(totalinfusion.toString() + " mL");
-      $("#total_balance").val(totalbalance.toString() + " mL");
-      //CONDICIÓN DEL BALANCE
-      if (totalbalance <= 0) {
-        msjHtml =
-          "<strong style='color:green'>Balance Hídrico Favorable.</strong> Condición normal, no hay retención de líquidos.";
-      } else if (totalbalance >= 1 && totalbalance <= 2000) {
-        msjHtml =
-          "Retención de líquidos considerable. En caso de presentarse esta situación <strong>por más de dos días consecutivos</strong>, llame y consulte con la unidad hospitalaria de Diálisis<br>Balance final del dia: " +
-          totalbalance +
-          " mL";
-      } else if (totalbalance > 2000) {
-        msjHtml =
-          "<strong style='color:red'>ALERTA: Excesiva retención de líquidos.</strong> Consulte de inmediato con su nefrólogo<br>Balance final del dia: " +
-          totalbalance +
-          " mL";
-        alert(
-          "ALERTA: Excesiva retención de líquidos. Consulte de inmediato con su nefrólogo\nBalance final del dia: " +
-            totalbalance +
-            " mL"
-        );
-        datoAnalisis =
-          "ALERTA: Excesiva retención de líquidos. Consulte de inmediato con su nefrólogo\nBalance final del dia: " +
-          totalbalance +
-          " mL";
-        alerta3 = true;
-      }
-      //enviar datos por correo
-      if (alerta1 || alerta2 || alerta3) {
-        sendMail(
-          nombre,
-          fecha_tratamiento,
-          datoAnalisis,
-          datoTurbiedad,
-          datoPresion,
-          datoPulso
-        );
-      }
-      $("#btn1").fadeIn("smooth");
-      $("#btn3").fadeIn("smooth");
-    }
-  }
 
   function cualidad_contenido(cualidad) {
     if (cualidad > 1) {
@@ -243,7 +158,7 @@ $(document).ready(function () {
 
   function sendMail(nombre, fecha, analisis, turbiedad, presion, pulso) {
     var params = {
-      to_name:'clesy.jaramillo@utp.ac.pa',
+      to_name: "clesy.jaramillo@utp.ac.pa",
       from_name: nombre,
       message:
         "Reporte del dia: " +
@@ -375,10 +290,105 @@ $(document).ready(function () {
         },
       },
     });
-    $("canvas").fadeIn('fast');
-    $("#regresar").fadeIn('fast');
-    ($grafica).destroy()
+    $("canvas").fadeIn("fast");
+    $("#regresar").fadeIn("fast");
+
   }
+
+  function analisis() {
+    sistema = $("#tipo_sistemadp").val();
+    presionAr = $("#ultima_presion").val();
+    pulso = $("#valor_frecuencia").val();
+    if (presionAr !== "") {
+      presion_Arterial(presionAr);
+    }
+
+    if (pulso !== "") {
+      frecuencia_cardiaca(pulso);
+    }
+
+    num1 = parseInt(cambio[i][1].value);
+    num2 = parseInt(cambio[i][2].value);
+    $("#balance" + (i + 1)).val(num1 - num2);
+    $("#nombre_paciente").attr("readonly", "readonly");
+    $("#drenaje" + (i + 1)).attr("readonly", "readonly");
+    $("#concentracion" + (i + 1)).attr("disabled", "disabled");
+    $("#cualidad" + (i + 1)).attr("disabled", "disabled");
+    i++; //Marca la fase de el analisis
+
+    if ($("#balance4").val() !== "") {
+      nombre = $("#nombre_paciente").val();
+      fecha_tratamiento = $("#fecha_tratamiento").val();
+      drenaje = document.getElementsByClassName("drenaje");
+      balance = document.getElementsByClassName("balance");
+      infusion = document.getElementsByClassName("infusion");
+      concentracion = document.getElementsByClassName("concentracion");
+      cualidad = document.getElementsByClassName("cualidad");
+
+      for (i = 0; i < balance.length; i++) {
+        totaldrenaje += parseInt(drenaje[i].value);
+        totalinfusion += parseInt(infusion[i].value);
+        totalconcentracion += parseFloat(concentracion[i].value);
+        totalcualidad += parseFloat(cualidad[i].value, 10);
+        totalbalance += parseFloat(balance[i].value);
+      }
+      cualidad_contenido(totalcualidad);
+
+      // Evalúa la cualidad del contenido de la diálisis, cualidad normal=1,cualidad turbia=2, si totalcualidad>5 indica que el contenido fue turbio en mas de una ocasión.
+
+      $("#total_concentracion").val(totalconcentracion.toString() + "%");
+      $("#total_drenaje").val(totaldrenaje.toString() + "mL");
+      $("#total_infusion").val(totalinfusion.toString() + " mL");
+      $("#total_balance").val(totalbalance.toString() + " mL");
+      //CONDICIÓN DEL BALANCE
+      if (totalbalance <= 0) {
+        msjHtml =
+          "<strong style='color:green'>Balance Hídrico Favorable.</strong> Condición normal, no hay retención de líquidos.";
+      } else if (totalbalance >= 1 && totalbalance <= 2000) {
+        msjHtml =
+          "Retención de líquidos considerable. En caso de presentarse esta situación <strong>por más de dos días consecutivos</strong>, llame y consulte con la unidad hospitalaria de Diálisis<br>Balance final del dia: " +
+          totalbalance +
+          " mL";
+      } else if (totalbalance > 2000) {
+        msjHtml =
+          "<strong style='color:red'>ALERTA: Excesiva retención de líquidos.</strong> Consulte de inmediato con su nefrólogo<br>Balance final del dia: " +
+          totalbalance +
+          " mL";
+        alert(
+          "ALERTA: Excesiva retención de líquidos. Consulte de inmediato con su nefrólogo\nBalance final del dia: " +
+          totalbalance +
+          " mL"
+        );
+        datoAnalisis =
+          "ALERTA: Excesiva retención de líquidos. Consulte de inmediato con su nefrólogo\nBalance final del dia: " +
+          totalbalance +
+          " mL";
+        alerta3 = true;
+      }
+      //enviar datos por correo
+      if (alerta1 || alerta2 || alerta3) {
+        sendMail(
+          nombre,
+          fecha_tratamiento,
+          datoAnalisis,
+          datoTurbiedad,
+          datoPresion,
+          datoPulso
+        );
+        var mensajes
+        if (datoTurbiedad !== "") { mensajes += datoTurbiedad + "\n"; }
+        if (datoPresion !== "") { mensajes += datoPresion + "\n" }
+        if (datoPulso !== "") { mensajes += datoPulso }
+        if (mensajes === "") {
+          mensajes = "No se registraron problemas"
+        }
+        insertarRegistro(nombre, fecha_tratamiento, totalinfusion, totaldrenaje, totalbalance, mensajes);
+      }
+      $("#btn1").fadeIn("smooth");
+      $("#btn3").fadeIn("smooth");
+    }
+  }
+  
 
   //Valida que solo se ingresen números en el campo drenaje y presión arterial
   $(".drenaje,#valor_frecuencia").keypress(function (event) {
