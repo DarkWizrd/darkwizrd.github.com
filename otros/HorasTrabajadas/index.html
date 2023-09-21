@@ -38,39 +38,19 @@
         var diferenciaMinutos1 = finTotalMinutos1 - inicioTotalMinutos1;
         var diferenciaMinutos2 = finTotalMinutos2 - inicioTotalMinutos2;
 
-        var horasTrabajadas1 = Math.floor(diferenciaMinutos1 / 60);
-        var minutosTrabajados1 = diferenciaMinutos1 % 60;
-        var horasTrabajadas2 = Math.floor(diferenciaMinutos2 / 60);
-        var minutosTrabajados2 = diferenciaMinutos2 % 60;
-
-        var totalHorasTrabajadas = horasTrabajadas1 + horasTrabajadas2;
-        var totalMinutosTrabajados = minutosTrabajados1 + minutosTrabajados2;
-
-        // Ajustar si los minutos suman más de 60
-        if (totalMinutosTrabajados >= 60) {
-          totalHorasTrabajadas += Math.floor(totalMinutosTrabajados / 60);
-          totalMinutosTrabajados = totalMinutosTrabajados % 60;
-        }
+        var totalHorasTrabajadas =
+          (diferenciaMinutos1 + diferenciaMinutos2) / 60;
 
         var horasExtras = 0;
-        var minutosExtras = 0;
 
         if (totalHorasTrabajadas > 8) {
           horasExtras = totalHorasTrabajadas - 8;
-          minutosExtras = totalMinutosTrabajados;
           totalHorasTrabajadas = 8;
-          totalMinutosTrabajados = 0;
         }
 
         return {
-          horasTrabajadas:
-            totalHorasTrabajadas.toString().padStart(2, "0") +
-            ":" +
-            totalMinutosTrabajados.toString().padStart(2, "0"),
-          horasExtras:
-            horasExtras.toString().padStart(2, "0") +
-            ":" +
-            minutosExtras.toString().padStart(2, "0"),
+          horasTrabajadas: totalHorasTrabajadas.toFixed(2), // Redondear a dos decimales
+          horasExtras: horasExtras.toFixed(2), // Redondear a dos decimales
         };
       }
 
@@ -88,11 +68,12 @@
         );
 
         document.getElementById("horas-trabajadas").textContent =
-          "Horas trabajadas: " + horas.horasTrabajadas;
+          "Horas trabajadas: " + horas.horasTrabajadas + " horas";
 
         document.getElementById("horas-extras").textContent =
-          "Horas extras: " + horas.horasExtras;
+          "Horas extras: " + horas.horasExtras + " horas";
       }
+
       function vaciarCampos() {
         document.getElementById("hora-inicio-1").value = "";
         document.getElementById("hora-fin-1").value = "";

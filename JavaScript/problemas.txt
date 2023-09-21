@@ -1,0 +1,19 @@
+
+¡Claro! Aquí tienes cinco problemas de programación en JavaScript que tus estudiantes pueden resolver como tarea. Estos problemas abarcan diferentes conceptos y niveles de dificultad para que tus estudiantes puedan poner a prueba sus habilidades de programación:
+
+Problema 1: Suma de Números Pares
+Escribe una función llamada sumaNumerosPares que tome un número entero positivo n como parámetro y devuelva la suma de todos los números pares desde 1 hasta n.
+
+Problema 2: Palabra más Larga
+Escribe una función llamada palabraMasLarga que tome una cadena de palabras separadas por espacios como parámetro y devuelva la palabra más larga de la cadena. Si hay varias palabras con la misma longitud máxima, devuelve la primera que encuentres.
+
+Problema 3: Números Primos
+Escribe una función llamada esPrimo que tome un número entero positivo n como parámetro y devuelva true si el número es primo, o false en caso contrario. Un número primo es aquel que solo es divisible por 1 y por sí mismo.
+
+Problema 4: Inversión de Cadenas
+Escribe una función llamada invertirCadena que tome una cadena como parámetro y devuelva la cadena invertida. Por ejemplo, si la entrada es "Hola", la salida debería ser "aloH".
+
+Problema 5: Eliminar Duplicados
+Escribe una función llamada eliminarDuplicados que tome un array de números como parámetro y devuelva un nuevo array que contenga los mismos elementos pero sin duplicados. El orden de los elementos en el nuevo array debe ser el mismo que en el array original.
+
+Recuerda que es importante que los estudiantes entiendan bien cada problema antes de empezar a resolverlos. Si tienen alguna duda, deben sentirse libres de consultarte. ¡Buena suerte con la tarea!

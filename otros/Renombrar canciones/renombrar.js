@@ -42,18 +42,8 @@ const stringToRemove = '[SPOTIFY-DOWNLOADER.COM] ';
 // Llama a la función para renombrar archivos y carpetas de forma recursiva
 renameFilesAndFoldersRecursively(folderPath, stringToRemove);
 
-//para usar el programa, ejecuta un cmd en la ubicación de este archivo y luego ejecuta el comando node renombrar.js
+/*para usar el programa, ejecuta un cmd en la ubicación de este archivo
+y luego ejecuta el comando node renombrar.js
+*/
 
 
-
-/* $(document).ready(function(){
-
-
-
-
-
-
-
-
-  
-}) //se asegura que el arbol cargue completo antes de ejecutar el resto del codigo*/
