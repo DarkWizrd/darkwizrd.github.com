@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Practica de html</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <!--
+    Metadatos del sitio:
+    Familia de caracteres, configuración de vista, descripción de la pagina
+    palabras clave y el autor de la pagina-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Creacion de la primera pagina web" />
+    <meta name="keywords" content="HTML, frontend" />
+    <meta name="author" content="DarkWizrd" />
+    <link rel="icon" type="png" href="fuego.png" />
+
+    <title>Practicando HTML5</title>
+    <style>
+      .navegador {
+        background-color: purple;
+        border: 2px solid purple;
+      }
+      .social {
+        background-color: pink;
+        border: 2px solid pink;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#opera">OperaGX</a>
+    <a href="#twitter">Twitter</a>
+    <a href="#spotify">Spotify</a>
+    <a href="#reddit">Reddit</a>
+    <header id="inicio"></header>
+    <div id="opera" class="navegador">
+      <h1>OperaGX</h1>
+      <p>OperaGX es un navegador para gamers</p>
+    </div>
+    <div id="twitter" class="social">
+      <h1>Twitter</h1>
+      <p>Twitter <bold>ahora X</bold> es una red social muy toxica</p>
+    </div>
+    <div id="spotify" class="navegador">
+      <h1>Spotify</h1>
+      <p>Spotify es el mayor reproductor de música en linea</p>
+    </div>
+    <div id="reddit" class="social">
+      <h1>Reddit</h1>
+      <p>Reddit es el hub mas grande de foros del internet</p>
+    </div>
+
+    <footer style="background-color: green; color: yellow">
+      <h1>ESTE ES EL FONDO DE LA PAGINA WEB</h1>
+      <a href="#inicio" style="position: fixed">Volver arriba</a>
+    </footer>
+  </body>
 </html>
+<!-- Alt+shift+A activa los comentarios, Alt+shift+F Da formato a el código 
+Ctrl+Shift+P para ver la ventana de comandos
+-->
